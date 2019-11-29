@@ -18,11 +18,13 @@ public class NewBehaviourScript : MonoBehaviour
     [Header("2D 剛體")]
     public Rigidbody2D r2D;
     public Animator ani;
+    [Header("音效區域")]
     private void Move()
     {
        float h = Input.GetAxisRaw("Horizontal");
         r2D.AddForce(new Vector2(5 * h, 0));
-        ani.SetBool("run bitch run",h!=0);
+        ani.SetBool("run bitch run", h != 0);
+        if (input.GetKeyDown(KeyCode.A)|| Input)
     }
 
     private void Jump()
@@ -33,6 +35,7 @@ public class NewBehaviourScript : MonoBehaviour
             isGround = false;
             r2D.AddForce(new Vector2(0, jump));
            // ani.SetBool("jump", jump != 0);
+
         }
     }
 
